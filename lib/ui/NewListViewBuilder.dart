@@ -20,7 +20,7 @@ class Newlistviewbuilder extends StatelessWidget {
             onTap: () {
               // debugPrint("ontap bosildi");
               Fluttertoast.showToast(
-                  msg: "This is Center Short Toast",
+                  msg: "Bu toast xabari",
                   toastLength: Toast.LENGTH_LONG,
                   gravity: ToastGravity.BOTTOM,
                   backgroundColor: Colors.red,
