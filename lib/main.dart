@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lesson_1/ui/GridViewBuilderSample.dart';
+import 'package:flutter_lesson_1/ui/GridViewList.dart';
 import 'package:flutter_lesson_1/ui/NewListViewBuilder.dart';
 
 void main() {
@@ -14,11 +16,17 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 164, 154, 180)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 164, 154, 180)),
         useMaterial3: true,
       ),
-      home: Newlistviewbuilder(),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue[100],
+          title: Text("Gridview lesson"),
+        ),
+        body: Gridviewbuildersample(),
+      ),
     );
   }
 }
-
