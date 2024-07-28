@@ -18,14 +18,14 @@ class Newlistviewbuilder extends StatelessWidget {
           elevation: 10,
           child: ListTile(
             onTap: () {
-              // debugPrint("ontap bosildi");
-              Fluttertoast.showToast(
-                  msg: "Bu toast xabari",
-                  toastLength: Toast.LENGTH_LONG,
-                  gravity: ToastGravity.BOTTOM,
-                  backgroundColor: Colors.red,
-                  textColor: Colors.black,
-                  fontSize: 20.0);
+              debugPrint(students[index].toString());
+              showToastMessage(index, false);
+              showAlertDialog(context);
+            },
+            onLongPress: () {
+              debugPrint(students[index].toString());
+              showToastMessage(index, true);
+              showAlertDialog(context);
             },
             leading: Icon(Icons.face),
             title: Text(students[index].name),
@@ -37,6 +37,92 @@ class Newlistviewbuilder extends StatelessWidget {
       itemCount: 50,
       separatorBuilder: (BuildContext context, int index) {
         return Divider();
+      },
+    );
+  }
+
+  showToastMessage(int index, bool isLongPressed) {
+    Fluttertoast.showToast(
+        msg: isLongPressed
+            ? "Bu toast xabar Long pressed"
+            : "Bu toast xabar short pressed",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        backgroundColor: Colors.red,
+        textColor: Colors.black,
+        fontSize: 20.0);
+  }
+
+  showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Alert dialog title"),
+          content: const SingleChildScrollView(
+            child: ListBody(
+              children: [
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+                Text("Alert dialog content"),
+              ],
+            ),
+          ),
+          actions: [
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("Ha"),
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("Yo'q"),
+            ),
+          ],
+        );
       },
     );
   }
@@ -54,4 +140,9 @@ class Student {
   late String desc;
 
   Student({required this.name, required this.desc});
+
+  @override
+  String toString() {
+    return "Tanlangan o'quvchi ismi $name izohi $desc";
+  }
 }
