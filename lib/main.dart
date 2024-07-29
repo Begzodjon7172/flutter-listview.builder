@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lesson_1/ui/GridViewBuilderSample.dart';
-import 'package:flutter_lesson_1/ui/GridViewList.dart';
-import 'package:flutter_lesson_1/ui/NewListViewBuilder.dart';
 
 void main() {
   runApp(const MyApp());
