@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lesson_1/ui/CollapsableToolBarLesson.dart';
 import 'package:flutter_lesson_1/ui/GridViewBuilderSample.dart';
 
 void main() {
@@ -17,13 +18,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(255, 164, 154, 180)),
         useMaterial3: true,
+        // brightness: Brightness.dark,
       ),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue[100],
           title: Text("Gridview lesson"),
         ),
-        body: Gridviewbuildersample(),
+        body: Collapsablletoolbarlesson(),
       ),
     );
   }
