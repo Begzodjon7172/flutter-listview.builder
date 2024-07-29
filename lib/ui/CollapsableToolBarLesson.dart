@@ -26,7 +26,13 @@ class Collapsablletoolbarlesson extends StatelessWidget {
           delegate: SliverChildListDelegate(
             sliverChildrenList(),
           ),
-        )
+        ),
+        SliverGrid(
+          delegate: SliverChildListDelegate(sliverChildrenList()),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+          ),
+        ),
       ],
     );
   }
